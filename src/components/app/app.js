@@ -5,9 +5,11 @@ import SearchPanel from '../search-panel/';
 
 const App = () => {
    return (
-      <div>
+      <div className="app">
          <AppHeader />
-         <SearchPanel/>
+         <div className="search-panel d-flex">
+            <SearchPanel/>
+         </div>
       </div>
    )
 }
