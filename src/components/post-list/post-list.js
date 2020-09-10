@@ -4,27 +4,27 @@ import './post-list.css';
 
 const PostList = ({posts}) => {
 
-   const elements = posts.map((item) => {
+   const elements = posts.map(item => {
+      const { id, label, important } = item;
       return (
-         <li className="list-group-item">
+         <li key={id} className="list-group-item">
             <PostListItem
-               label={item.label}
-               important={item.important} />
+               label={label}
+               important={important} />
          </li>
-      )
+      ) 
    })
 
    return (
       // <ul className="app-list list-group"> 
       //    <PostListItem label = "Going to learn React"/>
-      //    <PostListItem label="That is so good" important={true}/>
+      //    <PostListItem label="That is so good" important = "true"/>
       //    <PostListItem label="I need a break..." />
       //    <PostListItem label = "I need this kurs"/>
       // </ul>
-      <ul className="app-list list-group">
+      <ul className="app-list list-group"> 
          {elements}
       </ul>
-
    )
 }
 

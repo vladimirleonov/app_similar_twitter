@@ -8,12 +8,14 @@ import PostAddForm from '../post-add-form/';
 import './app.css';
 
 const App = () => {
+
    const data = [
-      {label: 'Going to learn React', important: true},
-      {label: 'That is so good', important: true},
-      { label: 'I need a break...', important: false },
-      {label: 'I need this kurs', important: false}
-   ]
+      {label: 'Going to learn React', important: false, id: 'qw'},
+      {label: 'That is so good', important: false, id: 'er'},
+      { label: 'I need a break...', important: false, id: 'ty'},
+      { label: 'I need this kurs', important: false, id: 'zx'}
+   ];
+
    return (
       <div className="app">
          <AppHeader />
