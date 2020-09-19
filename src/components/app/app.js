@@ -14,6 +14,7 @@ const AppBlock = styled.div`
 `
 
 export default class App extends Component {
+
    constructor(props) {
       super(props);
       this.state = {
@@ -24,10 +25,21 @@ export default class App extends Component {
             { label: 'I need this kurs', important: false, id: 'zx'}
          ]
       }
+      this.deleteItem = this.deleteItem.bind(this);
    }
 
    deleteItem(id) {
-      console.log(id);
+      this.setState(({ data }) => {
+         const index = data.findIndex(elem => elem.id===id );
+         
+         const before = data.slice(0, index);
+         const after = data.slice(index + 1);
+
+         const newData = [...before, ...after];
+         return {
+            data: newData
+         }
+      });
    }
 
    render() {
