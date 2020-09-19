@@ -25,6 +25,11 @@ export default class App extends Component {
          ]
       }
    }
+
+   deleteItem(id) {
+      console.log(id);
+   }
+
    render() {
       return (
          <AppBlock>
@@ -35,7 +40,7 @@ export default class App extends Component {
             </div>
             <PostList
                posts={this.state.data}
-               onDelete={id => { console.log(id) }}
+               onDelete={this.deleteItem}
             />
             <PostAddForm />
          </AppBlock>
