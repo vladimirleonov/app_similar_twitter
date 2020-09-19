@@ -1,17 +1,24 @@
 import React from 'react';
 import PostListItem from '../post-list-item/';
 import './post-list.css';
+import { ListGroup, ListGroupItem } from 'reactstrap';
 
-const PostList = ({posts}) => {
+const PostList = ({posts, onDelete}) => {
 
    const elements = posts.map(item => {
       const { id, label, important } = item;
       return (
-         <li key={id} className="list-group-item">
+         // <li key={id} className="list-group-item">
+         //    <PostListItem
+         //       label={label}
+         //       important={important} />
+         // </li>
+         <ListGroupItem key={id}>
             <PostListItem
+               onDelete={() => { onDelete(id) }}
                label={label}
                important={important} />
-         </li>
+         </ListGroupItem>
       ) 
    })
 
@@ -22,9 +29,12 @@ const PostList = ({posts}) => {
       //    <PostListItem label="I need a break..." />
       //    <PostListItem label = "I need this kurs"/>
       // </ul>
-      <ul className="app-list list-group"> 
+      // <ul className="app-list list-group"> 
+      //    {elements}
+      // </ul>
+      <ListGroup className="app-list">
          {elements}
-      </ul>
+      </ListGroup>
    )
 }
 
