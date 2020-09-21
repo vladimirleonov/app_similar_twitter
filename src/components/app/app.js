@@ -26,7 +26,7 @@ export default class App extends Component {
          ]
       }
       this.deleteItem = this.deleteItem.bind(this);
-      this.addItem = this.addItem.bind(this);
+      this.onAdd = this.onAdd.bind(this);
       this.onToggleLiked = this.onToggleLiked.bind(this);
       this.onToggleImportant = this.onToggleImportant.bind(this);
 
@@ -47,7 +47,7 @@ export default class App extends Component {
       });
    }
 
-   addItem(body) {
+   onAdd(body) {
       const newItem = {
          label: body,
          important: false,
@@ -123,7 +123,7 @@ export default class App extends Component {
                onToggleImportant={this.onToggleImportant}
 
             />
-            <PostAddForm addItem={this.addItem}/>
+            <PostAddForm onAdd={this.onAdd}/>
          </AppBlock>
       )
    }
